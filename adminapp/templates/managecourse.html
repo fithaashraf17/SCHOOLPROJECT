@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- <div class="panel panel-widget"> -->
+    <div class="bs-docs-example">
+        <div style="overflow-x:auto;">
+  
+        <table class="table "  >
+     
+            <thead>
+                <tr>
+                  <th>#</th>
+                  
+                  <th>Course Name</th>
+                  <th>edit</th>
+                  
+                  <th>delete</th>
+                
+                 
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    {% for x in reg %}
+                  <td>{{forloop.counter}}</td>
+                  <td>{{x.coursename}}</td>
+
+                 
+
+                
+				<td><a href= "{% url 'editcourse' %}?id={{x.id}}">edit</a></td>
+                
+		
+				<td><a href= "{% url 'deletecourse' %}?id={{x.id}}">delete</a></td>
+            
+					
+          
+                
+                </tr>
+                {% endfor %}
+              
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}

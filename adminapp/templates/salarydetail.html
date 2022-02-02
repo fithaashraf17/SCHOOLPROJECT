@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="innerpage_banner py-5">
+	<div class="dot1">
+		
+	</div>
+</section>
+
+
+    <h2>{{msg}}</h2>
+    <h3 class="title1" style="text-align:center">ALLOWANCE</h3>
+    <div class="form-three widget-shadow">
+        <form class="form-horizontal" action="{% url 'salarydetail' %}" method="post" >
+           {% csrf_token %}
+               
+           
+            <div class="form-group" style="padding-top:3rem;" >
+                <div class="col-sm-8">
+                <label for="disabledinput" class="col-sm-2 control-label">SALARY TYPE</label>
+             
+                
+
+<!-- <select name="type" >
+  <option value="LP ">LP</option>
+  <option value="UP">UP</option>
+  <option value="HIGHER SECONDARY ">HIGHER SECONDARY</option>
+  <option value="HIGH SCHOOL">HIGH SCHOOL</option>
+  
+</select> -->
+<select class="form-select" aria-label="Default select example" name="type">
+    <option selected>LP</option>
+    <option value="LP">LP</option>
+    <option value="UP">UP</option>
+    <option value="HIGHER SECONDARY">HIGHER SECONDARY</option>
+    <option value="HIGHER SCHOOL">HIGHER SCHOOL</option>
+  </select>
+<div class="form-group"  style="padding-top: 3rem;">
+    <label for="disabledinput" class="col-sm-2 control-label">ALLOWANCE</label>
+    <div class="col-sm-5">
+       <input type="text" name="amount" >
+      
+    </div>
+</div>
+                
+
+            
+
+<div class="card-footer text-center">
+    <button type="submit" class="btn btn-primary ">Submit</button>
+  </div>
+            {% endblock %}

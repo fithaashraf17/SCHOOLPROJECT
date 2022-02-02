@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="innerpage_banner py-5">
+	<div class="dot1">
+		
+	</div>
+</section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+            <!-- general form elements -->
+           
+                <h3>Add Course</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              {% for x in q %}
+              <form  action="{% url 'updatecourse' %}?id={{x.id}}" method="post">
+                  {% csrf_token %}
+                <div class="card-body">
+                  <div class="form-group">
+                    <label>Course Name </label>
+                    <input type="text" class="form-control" name="course" value="{{x.coursename}}" placeholder="Enter Course">
+                  </div>
+                   
+
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary btn-block">Update Course</button>
+                </div>
+              </form>
+            </div>
+            {% endfor %}
+            <!-- /.card -->
+
+
+
+          </div>
+          </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock %}

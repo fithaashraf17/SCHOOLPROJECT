@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- <div class="panel panel-widget"> -->
+    <div class="bs-docs-example">
+        <div style="overflow-x:auto;">
+        <table class="table " >
+            <thead>
+                <h2 style="text-align: center;">RESULT</h2>
+                <tr>
+                  <th>#</th>
+                  <th> Name</th>
+                  
+                 
+                  <th> admission no</th>
+                 
+                  
+                
+                  <th>Roll NO</th>
+                  <th>Register NO</th>
+              
+                  <th>   Subject 1</th>
+                  <th>   Subject 2</th>
+                  <th>   Subject 3</th>   
+                   <th>   Subject 4</th>  
+                    <th>   Subject 5</th>
+
+                    <th>Total mark</th>
+
+                  <th>Grade</th>
+                  <th>Remark</th>
+
+                  <th>edit</th>
+                  <th>delete</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for x in q %}
+                  <td>{{forloop.counter}}</td>
+                  <td>{{x.studentid.name}}</td>
+                  
+         
+                 
+                  <td>{{x.studentid.admission_no}}</td>
+                 
+           
+                  
+                  <td>{{x.studentid.roll}}</td>
+                  <td>{{x.studentid.regno}}</td>
+          
+
+
+                
+                  <td>{{x.totalmark}}</td>
+                  <td>{{x.subject1}}</td>
+                  <td>{{x.subject2}}</td>
+                  <td>{{x.subject3}}</td>
+                  <td>{{x.subject4}}</td>
+                  <td>{{x.subject5}}</td>
+                    <td>{{x.grade}}</td>
+                        <td>{{x.status}}</td>
+                  
+                            <td><a href= "{% url 'editresult' %}?id={{x.id}}">edit</a></td>
+                            <td><a href= "{% url  'deleteresult' %}?id={{x.id}}">delete</a></td>
+                
+                </tr>
+
+                      {% endfor %}
+            </tbody>
+       
+    </div>
+    </div>
+
+
+{% endblock %}

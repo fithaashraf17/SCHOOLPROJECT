@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="innerpage_banner py-5">
+	<div class="dot1">
+		
+	</div>
+</section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+            <!-- general form elements -->
+           <h3>{{msg}}</h3>
+                <h3>Exam Result</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              {% for x in s %}
+               <form  action="{% url 'addresult'  %}?id={{x.id}}"  method="post"> 
+                {% csrf_token %}
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="disabledinput" class="col-sm-2 control-label">Name</label>
+                     
+                      <input type="text" name="name" required="" value="{{x.name}}" >
+                    </div>
+                 
+                  
+                    <div class="form-group">
+                      <label for="disabledinput" class="col-sm-2 control-label">Class</label>
+                                        
+                      <input type="text" value="{{x.standard}}" name="standard" required="" >
+                  
+                  </div>
+                  <div class="form-group">
+                    <label for="disabledinput" class="col-sm-2 control-label">Exam Type</label>
+                                      
+                    <input type="text"  name="type" required="" >
+                
+                </div>
+                <div class="form-group">
+                  <label for="disabledinput" class="col-sm-2 control-label">Register No</label>
+                                    
+                  <input type="text" value="{{x.regno}}" name="standard" required="" readonly>
+              
+              </div>
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label for="disabledinput" class="col-sm-2 control-label">Semester</label>
+                      <input type="text" class="form-control" name="sem" placeholder="Enter semester">
+                    </div>
+                     <div class="form-group">
+                      <label for="disabledinput" class="col-sm-2 control-label">subject 1</label>
+                      <input type="text" class="form-control" name="subject1" placeholder="enter mark ">
+                    </div>
+                    <div class="form-group">
+                      <label for="disabledinput" class="col-sm-2 control-label">subject 2</label>
+                      <input type="text" class="form-control" name="subject2" placeholder="enter mark ">
+                    </div>
+                    <div class="form-group">   <label for="disabledinput" class="col-sm-2 control-label">subject 3</label>
+                      <input type="text" class="form-control" name="subject3" placeholder="enter mark ">
+                    </div>
+                    <div class="form-group">
+                      <label for="disabledinput" class="col-sm-2 control-label">subject 4</label>
+                      <input type="text" class="form-control" name="subject4" placeholder=" enter mark">
+                    </div>
+                    <div class="form-group">
+                      <label for="disabledinput" class="col-sm-2 control-label">subject 5</label>
+                      <input type="text" class="form-control" name="subject5" placeholder=" enter mark">
+                    </div>
+                    <div class="form-group">
+                      <label for="disabledinput" class="col-sm-2 control-label">Assignment Grade</label>
+                      <input type="text" name="g">
+                    </div>
+                  </div>
+
+                     <div class="form-group">
+                      <label for="disabledinput" class="col-sm-2 control-label">Total Score</label>
+                        <input type="text" name="ts">
+                      </div> 
+                      <div class="form-group">
+                        <label for="disabledinput" class="col-sm-2 control-label">Student Score</label>
+                        <input type="text" name="ss">
+                      </div>
+                      </div> 
+                      
+                      <div class="form-group">
+                        <label for="disabledinput" class="col-sm-2 control-label">Grade</label>
+                        <input type="text" name="grade">
+                      </div>
+                      </div> 
+                      <div class="form-group">
+                        <label for="disabledinput" class="col-sm-2 control-label">Remark</label>
+                        <input type="text" name="status">
+                      </div>
+                      </div> 
+                      
+                    <div class="card-footer ">
+                  <button type="submit" class="btn btn-primary btn-block">Add Result</button>
+                </div>
+                {% endfor %}
+                </form>
+            <!-- /.card -->
+
+
+
+          </div>
+          </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock %}

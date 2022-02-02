@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- <div class="panel panel-widget"> -->
+    <div class="bs-docs-example">
+        <div style="overflow-x:auto;">
+  
+        <table class="table "  >
+     
+            <thead>
+                <tr>
+                  <th>DAY</th>
+                  <th> CLASS</th>
+                  <th>DIVISION</th>
+                  <th>PERIOD 1</th>
+                  <th> PERIOD 2</th>
+                  <th>PERIOD 3</th>
+                  <th>PERIOD 4</th>
+                  <th>PERIOD 5</th>
+                  <th>EDIT</th>
+                  <th>DELETE</th>
+                
+                 
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    {% for x in usr %}
+                  <td>{{x.day}}</td>
+                  <td>{{x.clas}}</td>
+                  <td>{{x.div}}</td>
+
+                  
+                  <td>{{x.period1}}</td>
+                  <td>{{x.period2}}</td>
+                  <td>{{x.period3}}</td>
+                  <td>{{x.period4}}</td>
+                  <td>{{x.period5}}</td>
+
+                
+                
+				<td><a href= "{% url 'editpagett' %}?id={{x.id}}">edit</a></td>
+				<td><a href= "{% url 'deletetimetable' %}?id={{x.id}}">delete</a></td>
+                 {% if x.status == "pending" %}
+					
+					<td><a href= "{% url 'statussubject' %}?id={{x.id}}">approve</a></td>
+					{% else %}
+					{% endif %}
+					
+
+          
+                
+                </tr>
+                {% endfor %}
+              
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}

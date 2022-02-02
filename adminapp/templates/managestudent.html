@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- <div class="panel panel-widget"> -->
+    <div class="bs-docs-example">
+        <div style="overflow-x:auto;">
+        <table class="table " >
+            <thead>
+                <tr>
+                  <th>#</th>
+                  <th> Name</th>
+                  <th>Email</th>
+                  <th>image</th>
+                  <th>Fathers Name</th>
+                  <th> Mothers Name</th>
+                  <th>Class</th>
+                  <th>dob</th>
+                  <th>Phone</th>
+                  <th> admission no</th>
+                  <th>gender</th>
+                  <th>division</th>
+                  <th>address</th>
+                  <th> Course</th>
+                  <th>Roll NO</th>
+                  <th>Register NO</th>
+                  <th>Session</th>
+
+                  <th>edit</th>
+                  <th>delete</th>
+                  <th>status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for x in reg %}
+                  <td>{{forloop.counter}}</td>
+                  <td>{{x.name}}</td>
+                  <td>{{x.email}}</td>
+                  <td><img src="{{x.photo.url}}" alt="" width="100px" height="100px" style="object-fit: contain;"></td>
+                  <td>{{x.fathername}}</td>
+                  <td>{{x.mothername}}</td>
+                  <td>{{x.standard}}</td>
+                  <td>{{x.dob}}</td>
+                  <td>{{x.phone}}</td>
+                  <td>{{x.admission_no}}</td>
+                  <td>{{x.gender}}</td>
+                  <td>{{x.feetype}}</td>
+                  <td>{{x.address}}</td>
+                  <td>{{x.courseid.coursename}}</td>
+                  <td>{{x.roll}}</td>
+                  <td>{{x.regno}}</td>
+                  <td>{{x.sesid.session_start_year}}-{{x.sesid.session_start_year}}</td>
+
+
+                
+                  <td><a href= "{% url 'editstudent' %}?id={{x.id}}">edit</a></td>
+				<td><a href="{% url 'deletestudent' %}?id={{x.id}}">delete</a></td>
+                {% if x.status == "pending" %}
+					
+                <td><a href="{% url 'status' %}?id={{x.id}}">approve</a></td>
+                {% else %}
+                {% endif %}
+                
+
+     
+                
+                </tr>
+
+                      {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+
+{% endblock %}

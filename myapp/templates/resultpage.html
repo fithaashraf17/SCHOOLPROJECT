@@ -1,0 +1,37 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+<!-- inner page banner -->
+
+<h3>{{msg}}</h3>
+
+<!-- //inner page banner -->
+<!-- mail -->
+				
+<section class="w3l-contact-info-main" id="contact">
+    <div class="contact-sec	">
+        <div class="container">
+            <div class="main-titles-head text-center">
+                <h3 class="header-name ">
+             Result
+                </h3>
+                
+                <div class="border-line "></div>
+                <div class="border-line2 "></div>
+            </div>
+            
+         
+<div class="back-color">
+
+<form action="/result/" method="POST">
+    {% csrf_token %}
+
+        
+<div class="form-group">
+<label for="exampleInputEmail1">Register Number</label>
+<input type="text" class="form-control" id="exampleInputEmail1"   name="reg"  >
+</div>
+
+        
+<button type="submit">submit</button>
+{% endblock %}                           
+ 

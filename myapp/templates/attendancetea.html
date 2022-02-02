@@ -1,0 +1,78 @@
+{% extends 'headerfooter.html' %}
+{% block content %}
+
+<h2>{{msg}}</h2>
+
+<section class="w3l-contact-info-main" id="contact">
+  <div class="contact-sec	">
+      <div class="container">
+          <div class="main-titles-head text-center">
+              <h3 class="header-name ">
+          Attendance 
+              </h3>
+              
+              <div class="border-line "></div>
+              <div class="border-line2 "></div>
+          </div>
+          
+       
+<div class="back-color">
+              <!-- /.card-header -->
+              <!-- form start -->
+         {% for x in q %}
+               <form  action="/studentattendancetea/?id={{x.id}}" method="post" style="margin-left: 3rem;margin-top: 1rem;"> 
+                {% csrf_token %}
+
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Name</label>
+                    <input type="text" name="name" value="{{x.name}}">
+                </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Class</label>
+                      <input type="text" name="clas" value="{{x.standard}}">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputEmail1">Division</label>
+                        <input type="text" name="div" value="{{x.feetype}}">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleInputEmail1">Roll No</label>
+                        <input type="text" name="roll" value="{{x.roll}}">
+                      </div>
+                      
+              
+                        <div class="form-group">
+                          <label for="exampleInputEmail1">Month</label>
+                          <input type="text" class="form-control" name="month" placeholder="Enter month">
+                        </div>
+                  
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Total Lectures</label>
+                              <input type="text" class="form-control" name="total" placeholder="">
+                            </div>
+                          
+                                <div class="form-group">
+                                  <label for="exampleInputEmail1">Lectures Attended</label>
+                                  <input type="text" class="form-control" name="attended" placeholder="">
+                                </div>
+                        
+                                  <div class="form-group">
+                                    <label for="exampleInputEmail1">Status</label>
+                                    <input type="text" class="form-control" name="status" placeholder="">
+                                  </div>
+                                     
+                                  <div class="form-group-2 text-center">
+                                    <button type="submit" class="btn action-button mt-3" style="text-align: center;">Submit</button>
+                                </div>
+                {% endfor %}
+                </form>
+            <!-- /.card -->
+
+</div>
+
+          </div>
+          </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock %}

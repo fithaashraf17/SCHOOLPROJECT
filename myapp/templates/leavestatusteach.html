@@ -1,0 +1,49 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+<!-- <div class="panel panel-widget"> -->
+    
+    <div class="bs-docs-example">
+        <div style="overflow-x:auto;">
+        <table class="table " >
+            <thead>
+                <tr>
+             
+                  <th> Name</th>
+                  
+                 
+                  <th>Leave Date</th>
+                  <th>Reason</th>
+    
+                 
+                  <th>status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for x in reg %}
+                  <td>{{x.teacherid.name}}</td>
+                
+                 
+                  
+                  
+                  <td>{{x.leavedate}}</td>
+                  <td>{{x.leave_message}}</td>
+                  <td>{{x.status}}</td>
+                  
+                
+                 
+			
+                
+            </tr>
+
+             {% endfor %}
+                
+              
+              
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+
+{% endblock %}

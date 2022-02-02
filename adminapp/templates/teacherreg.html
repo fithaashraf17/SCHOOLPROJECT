@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="innerpage_banner py-5">
+	<div class="dot1">
+		
+	</div>
+</section>
+
+
+    <h2>{{msg}}</h2>
+    <h3 class="title1">TEACHER REGISTRATION</h3>
+    <div class="form-three widget-shadow">
+        <form class="form-horizontal" action="{% url 'teacherregistration' %}" method="post" enctype="multipart/form-data" >
+           {% csrf_token %}
+               
+          
+            <div class="form-group" style="padding-top: 3rem;" >
+                <label for="disabledinput" class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1"  name="name">
+                </div>
+            </div><div class="form-group" >
+                <label for="disabledinput" class="col-sm-2 control-label">email</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1"  name="email">
+                </div>
+            </div>
+            <div class="form-group" >
+                <label for="disabledinput" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control1"  name="password">
+                </div>
+            </div>
+            <div class="form-group" >
+                <label for="disabledinput" class="col-sm-2 control-label">confirm password</label>
+                <div class="col-sm-8">
+                    <input type="password" class="form-control1"  name="confirmpassword">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputPassword" class="col-sm-2 control-label">date of birth</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1" id="inputPassword" placeholder="dob" name="dob">
+                </div>
+            </div>
+            
+           
+            <div class="form-group">
+                <label for="txtarea1" class="col-sm-2 control-label">Address</label>
+                <div class="col-sm-8"><textarea name="address" id="address" cols="50" rows="4" class="form-control1"></textarea></div>
+            </div>
+            <div class="form-group">
+                <label for="radio" class="col-sm-2 control-label"> Gender</label>
+                <div class="col-sm-8">
+                    <div class="radio block"><label><input type="radio" value="female" name="gender"> Female</label></div>
+                    <div class="radio block"><label><input type="radio" value="male" name="gender"> Male</label></div>
+                    
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="smallinput" class="col-sm-2 control-label label-input-sm">photo</label>
+                <div class="col-sm-8">
+                    <input type="file" class="form-control1 input-sm"   name="image">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="smallinput" class="col-sm-2 control-label label-input-sm">Fathers Name </label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1 input-sm" name="fname" placeholder="Small Input">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="smallinput" class="col-sm-2 control-label label-input-sm">Mothers Name </label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1 input-sm" name="mname" placeholder="Small Input">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mediuminput" class="col-sm-2 control-label">Phone</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1" name="phone"       placeholder="phone">
+                </div>
+            </div>
+           
+            
+            <div class="form-group mb-n">
+                <label for="largeinput" class="col-sm-2 control-label label-input-lg">qualification</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1 input-lg"   name="qualification"  placeholder="qualification">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">subject</label>
+                <div class="col-sm-8">
+                    <select multiple="" class="form-control1" name="subject">
+                        <option value="biology">BIOLOGY</option>
+                        <option value="computer science"> COMPUTER SCIENCE</option>
+                        <option value="accountancy">ACCOUNTANCY</option>
+                        <option value="chemistry">CHEMISTRY</option>
+                        <option value="physics">PHYSICS</option>
+                        <option value="maths">MATHS</option>
+                        <option value="english">ENGLISH</option>
+                        <option value="malayalm">MALAYALAM</option>
+                        <option value="hindi">HINDI</optiona>
+                        <option value="statistic">STATISTIC</option>
+                       
+                       
+                       
+                       
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">section</label>
+                <div class="col-sm-8">
+                    <select multiple="" class="form-control1" name="section">
+                        <option value="LP">LP</option>
+                        <option value="UP">UP</option>
+                        <option value="HIGH SCHOOL">HIGH SCHOOL</option>
+                        <option value="HIGHER SECONDARY">HIGHER SECONDARY</option>
+                        
+                       
+                       
+                    </select>
+                </div>
+            </div>
+
+           
+            <div class="form-group">
+                <label for="txtarea1" class="col-sm-2 control-label">experience</label>
+                <div class="col-sm-8"><textarea name="experience" id="address" cols="50" rows="4" class="form-control1"></textarea></div>
+            </div>
+            <div class="form-group mb-n">
+                <label for="largeinput" class="col-sm-2 control-label label-input-lg">organisation address</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1 input-lg"   name="organisation" >
+                </div>
+            </div>
+            <div class="form-group mb-n">
+                <label for="largeinput" class="col-sm-2 control-label label-input-lg">designation</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1 input-lg"   name="designation">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="txtarea1" class="col-sm-2 control-label">Achievments</label>
+                <div class="col-sm-8"><textarea name="achievments" id="address" cols="50" rows="4" class="form-control1"></textarea></div>
+            </div>
+            <div class="form-group">
+                <label for="smallinput" class="col-sm-2 control-label label-input-sm">document</label>
+                <div class="col-sm-8">
+                    <input type="file" class="form-control1 input-sm"   name="doc">
+                </div>
+            </div>
+            
+            <div class="form-group mb-n" style="padding-bottom: 3rem;" >
+                <div class="col-sm-8"  style="text-align: center;">
+            <button type="submit"   >Register</button>
+            </div>
+            </div>
+        </form>
+
+  
+  
+    {% endblock %}

@@ -1,0 +1,83 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+<!-- <div class="panel panel-widget"> -->
+    <section class="w3l-contact-info-main" id="contact">
+    <div class="contact-sec	 " >
+        <div class="container-fluid">
+            <div class="main-titles-head text-center">
+                <h3 class="header-name ">
+           Result Record
+                </h3>
+                
+                <div class="border-line "></div>
+                <div class="border-line2 "></div>
+            </div>
+    <div class="bs-docs-example">
+        <div style="overflow-x:auto;">
+        <table class="table " >
+            <thead>
+               
+                <tr>
+                  <th>#</th>
+                  <th> Name</th>
+                  
+                 
+                  <th> admission no</th>
+                 
+                  
+                
+                  <th>Roll NO</th>
+                  <th>Register NO</th>
+              
+                  <th>   Subject 1</th>
+                  <th>   Subject 2</th>
+                  <th>   Subject 3</th>   
+                   <th>   Subject 4</th>  
+                    <th>   Subject 5</th>
+
+                    <th>Total mark</th>
+
+                  <th>Grade</th>
+                  <th>Remark</th>
+
+                 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for x in s %}
+                  <td>{{forloop.counter}}</td>
+                  <td>{{x.studentid.name}}</td>
+                  
+         
+                 
+                  <td>{{x.studentid.admission_no}}</td>
+                 
+           
+                  
+                  <td>{{x.studentid.roll}}</td>
+                  <td>{{x.studentid.regno}}</td>
+          
+
+
+                
+                  <td>{{x.totalmark}}</td>
+                  <td>{{x.subject1}}</td>
+                  <td>{{x.subject2}}</td>
+                  <td>{{x.subject3}}</td>
+                  <td>{{x.subject4}}</td>
+                  <td>{{x.subject5}}</td>
+                    <td>{{x.grade}}</td>
+                    <td>{{x.status}}</td>
+                       
+                
+                </tr>
+
+                      {% endfor %}
+            </tbody>
+        </table>
+       
+    </div>
+    </div>
+{% endblock %}
+

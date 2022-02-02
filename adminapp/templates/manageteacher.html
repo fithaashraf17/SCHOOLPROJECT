@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- <div class="panel panel-widget"> -->
+    <div class="bs-docs-example">
+        <div style="overflow-x:auto;">
+  
+        <table class="table "  >
+     
+            <thead>
+                <tr>
+                  <th>#</th>
+                  <th> Name</th>
+                  <th>Email</th>
+                  <th>image</th>
+                  <th>Fathers Name</th>
+                  <th> Mothers Name</th>
+                  
+                  <th>dob</th>
+                  <th>Phone</th>
+                  <th> subject</th>
+                  <th>gender</th>
+                  <th>qualification</th>
+                  <th>address</th>
+                  <th> section</th>
+                  
+                  <th>experience</th>
+                  <th> organisation</th>
+                  <th>designation</th>
+                  <th>achievments</th>
+                  <th>document</th>
+                  <th>edit</th>
+                  <th>delete</th>
+                  <th>status</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    {% for x in reg %}
+                  <td>{{forloop.counter}}</td>
+                  <td>{{x.name}}</td>
+                  <td>{{x.email}}</td>
+                  <td><img src="{{x.photo.url}}" alt="" width="100px" height="100px" style="object-fit: contain;"></td>
+                  <td>{{x.fathername}}</td>
+                  <td>{{x.mothername}}</td>
+                  
+                  <td>{{x.dob}}</td>
+                  <td>{{x.phone}}</td>
+                  <td>{{x.subject}}</td>
+                  <td>{{x.gender}}</td>
+                  <td>{{x.qualification}}</td>
+                  <td>{{x.address}}</td>
+                 
+                  <td>{{x.section}}</td>
+                  <td>{{x.experience}}</td>
+                  <td>{{x.organisationaddress}}</td>
+                  <td>{{x.designation}}</td>
+                  <td>{{x.achievments}}</td>
+                  <td>{{x.document}}</td>
+
+                
+                
+				<td><a href= "{% url 'editteacher' %}?id={{x.id}}">edit</a></td>
+				<td><a href= "{% url 'deleteteacher' %}?id={{x.id}}">delete</a></td>
+{% if x.status == "pending" %}
+					
+					<td><a href= "{% url 'statustea' %}?id={{x.id}}">approve</a></td>
+					{% else %}
+					{% endif %}
+					
+            
+                
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}

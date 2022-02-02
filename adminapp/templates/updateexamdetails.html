@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="innerpage_banner py-5">
+	<div class="dot1">
+		
+	</div>
+</section>
+
+
+    <h2>{{msg}}</h2>
+    <h3 class="title1">Exam Details</h3>
+    <div class="form-three widget-shadow"  style='padding-top:2rem;' >
+        {% for x in reg %}
+        <form class="form-horizontal" action="{% url 'updateexamdetail'  %}?id={{x.id}}" method="post" >
+           {% csrf_token %}
+               
+           
+            <div class="form-group"  >
+                <label for="disabledinput" class="col-sm-2 control-label">Exam name</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1"  name="exam" value="{{x.exam}}">
+                </div>
+                </div>
+                
+
+
+               
+          <div class="form-group" style="padding-top:1rem;" >
+                <label for="disabledinput" class="col-sm-2 control-label">CLASS</label>
+                <div class="col-sm-8">
+
+                    <input type="text" name="time" value="{{x.standard}}">
+                    </div>
+                    </div>
+                             
+                    <div class="form-group"  >
+                        <label for="disabledinput" class="col-sm-2 control-label">Date</label>
+                        <div class="col-sm-8">
+                           <input type="text" name="date" value="{{x.date}}" >
+                          
+                        </div>
+                    </div>
+   
+            <div class="form-group"  >
+                <label for="disabledinput" class="col-sm-2 control-label">Time</label>
+                <div class="col-sm-8">
+                   <input type="text" name="time" value="{{x.time}}">
+                  
+                </div>
+            </div>
+            <div class="form-group text-center"style="padding-left:7rem;">
+            <button type="submit" >submit</button>
+            </div>
+        </form>
+        {% endfor %}
+        </div>
+
+            {% endblock %}

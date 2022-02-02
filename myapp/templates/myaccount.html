@@ -1,0 +1,55 @@
+<!-- //Navigation -->
+{% extends "headerfooter.html" %}
+{% block content %}
+<!-- inner page banner -->
+
+<!-- //inner page banner -->
+<!-- mail -->
+				
+<section class="w3l-contact-info-main" id="contact">
+    <div class="contact-sec	">
+        <div class="container">
+            <div class="main-titles-head text-center">
+                <h3 class="header-name ">
+                 Account Details
+                </h3>
+                
+                <div class="border-line "></div>
+                <div class="border-line2 "></div>
+            </div>
+            
+         
+<div class="back-color">
+{% for  x in reg %}
+        
+<div class="form-group">
+<label for="exampleInputEmail1">Name</label>
+<input type="text" class="form-control" id="exampleInputEmail1"   name="name" value="{{x.name}}" >
+</div>
+        
+<div class="form-group">
+    <label for="exampleInputEmail1">Email</label>
+    <input type="text" class="form-control" id="exampleInputEmail1"   name="email" value="{{x.email}}" >
+    </div>
+    
+    
+
+
+<div class="form-group">
+<label for="exampleInputPassword1">Password</label>
+<input type="text" class="form-control" id="exampleInputPassword1" name="password" value="{{x.password}}" >
+</div> 
+
+  
+{% endfor %}
+<div class="list-login-bottom text-center mt-lg-5 mt-4">
+                        <button onclick="window.location.href = '/changepass/';" style="text-align: center;">Change Password</button></td>
+            </div>
+            </form>
+
+        </div>
+        </div>        
+    </div>
+    </div>
+</section>
+ {% endblock %}

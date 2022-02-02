@@ -1,0 +1,67 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+ 
+	<h4>{{msg}}</h4>
+	
+
+<section class="w3l-contact-info-main" id="contact">
+    <div class="contact-sec	">
+        <div class="container">
+            <div class="main-titles-head text-center">
+                <h3 class="header-name ">
+                 APPLY FOR LEAVE
+                </h3>
+                
+                <div class="border-line "></div>
+                <div class="border-line2 "></div>
+            </div>
+            <div align="center" style="color: red;">{{msgkey}}</div>
+            <div class="" data-selector="header11">
+<div class="back-color">
+    {% for x in  usr %}
+	<form action="/leaveteacher/" method="post"> 
+        {% csrf_token %}
+<div class="form-group">
+  
+<label for="exampleInputEmail1">Name</label>
+<input type="text" class="form-control" id="exampleInputEmail1"   value="{{x.name}}" name="name">
+</div>
+<div class="form-group">
+  
+    <label for="exampleInputEmail1">Subject</label>
+    <input type="text" class="form-control" id="exampleInputEmail1"   value="{{x.subject}}" name="subject">
+    </div>
+    
+
+
+<div class="form-group">
+<label for="exampleInputPassword1">Date</label>
+<input type="text" class="form-control" id="exampleInputPassword1" name="date">
+</div> 
+<div class="form-group">
+    <label for="exampleInputPassword1">REASON</label>
+    <textarea name="reason"  class="form-control" id="exampleInputPassword1" ></textarea>
+    </div> 
+
+  
+
+ 
+                    <div class="form-group-2 text-center">
+                        <button type="submit" class="btn action-button mt-3">APPLY FOR LEAVE</button>
+                    </div>
+                    {% endfor %}
+            </div>
+            </form>
+
+        </div>
+        </div>        
+    </div>
+    </div>
+</section>
+<br>
+<br>
+<br>
+
+
+
+{% endblock %} 

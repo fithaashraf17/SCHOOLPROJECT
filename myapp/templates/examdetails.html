@@ -1,0 +1,83 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+<!-- <div class="panel panel-widget"> -->
+    <section class="w3l-contact-info-main" id="contact">
+    <div class="contact-sec	 " >
+        <div class="container-fluid">
+            <div class="main-titles-head text-center">
+                <div class="textwidget" >
+                    <ul class="top-bar-info" style="border: none;
+                    background-color: transparent;
+                    list-style: none;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    text-transform: uppercase;">
+                        <li ><span style="color: #774c8c;">
+                                <marquee direction="left" onmouseover="this.stop()"
+                                    onmouseout="this.start()" width="490px" height="28px"><a
+                                        href="/";"
+                                        style="color: #774c8c;">TIME TABLE WILL BE AVAILABLE SOON...
+                                       </a></marquee> 
+                        
+                        
+                    </ul>
+                </div>
+                <h3 class="header-name ">
+        Exam Details
+                </h3>
+                
+                <div class="border-line "></div>
+                <div class="border-line2 "></div>
+            </div>
+           
+    <div class="bs-docs-example">
+        <div style="overflow-x:auto;">
+        <table class="table " >
+            <thead>
+               
+                <tr>
+                  <th>#</th>
+                  <th> Class</th>
+                  
+                 
+                  <th>Exam</th>
+                 
+                  
+                
+                  <th>Date</th>
+                  <th>Time</th>
+              
+                 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for x in s %}
+                  <td>{{forloop.counter}}</td>
+                  <td>{{x.clas}}</td>
+                  
+         
+                 
+                  <td>{{x.exam}}</td>
+                 
+           
+                  
+                  <td>{{x.date}}</td>
+                  <td>{{x.time}}</td>
+          
+
+
+                
+                       
+                
+                </tr>
+
+                      {% endfor %}
+            </tbody>
+        </table>
+       
+    </div>
+    </div>
+{% endblock %}
+

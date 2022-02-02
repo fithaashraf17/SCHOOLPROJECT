@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- <div class="panel panel-widget"> -->
+    <div class="bs-docs-example">
+        <div style="overflow-x:auto;">
+  
+        <table class="table "  >
+     
+            <thead>
+                <tr>
+                  <th>#</th>
+                  <th> Student</th>
+                  <th> Class</th>
+                  <th> Div</th>
+                  <th> Roll No</th>
+
+                  <th>Month</th>
+                  <th>Total Lecture</th>
+                  <th> Attended Lectures</th>
+                  <th>status</th>
+                  <th>edit</th>
+                  <th>delete</th>
+          
+                
+                 
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    {% for x in reg %}
+                  <td>{{forloop.counter}}</td>
+                  
+            
+
+                  <td>{{x.studentid.name}}</td>
+                  <td>{{x.studentid.standard}}</td>
+                  <td>{{x.studentid.feetype}}</td>
+                  <td>{{x.studentid.roll}}</td>
+                  <td>{{x.month}}</td>
+                  <td>{{x.total_lec}}</td>
+                  
+                  <td>{{x.lec_attended}}</td>
+                  <td>{{x.status}}</td>
+                  
+
+                
+                
+				<td><a href= "{% url 'editattendancestudent' %}?id={{x.id}}">edit</a></td>
+				<td><a href= "{% url 'delattendancerecord' %}?id={{x.id}}">delete</a></td>
+                 
+					
+
+          
+                
+                </tr>
+                {% endfor %}
+              
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,202 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="innerpage_banner py-5">
+	<div class="dot1">
+		
+	</div>
+</section>
+
+
+    <h2>{{msg}}</h2>
+    <h3 class="title1">TEACHER REGISTRATION</h3>
+    <div class="form-three widget-shadow">
+        {% for x in usr %}
+        <form class="form-horizontal" action= "{% url 'updateteacher' %}?id={{x.id}}" method="post" enctype="multipart/form-data" >
+           {% csrf_token %}
+               
+           <!-- <h4>PERSONEL DETAILS</h4> -->
+            <div class="form-group" >
+                <label for="disabledinput" class="col-sm-2 control-label">Name</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1"  name="name" value="{{x.name}}">
+                </div>
+            </div>
+            <div class="form-group" >
+                <label for="disabledinput" class="col-sm-2 control-label">email</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1"  name="email" value="{{x.email}}">
+                </div>
+            </div>
+            <div class="form-group" >
+                <label for="disabledinput" class="col-sm-2 control-label">Password</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1"  name="password" value="{{x.password}}">
+                </div>
+            </div>
+            
+
+            <div class="form-group">
+                <label for="inputPassword" class="col-sm-2 control-label">date of birth</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1" id="inputPassword" placeholder="dob" value="{{x.dob}}"  name="dob">
+                </div>
+            </div>
+            
+           
+            <div class="form-group">
+                <label for="txtarea1" class="col-sm-2 control-label">Address</label>
+                <div class="col-sm-8"><textarea name="address"   value="{{x.address}}" id="address" cols="50" rows="4" class="form-control1"></textarea></div>
+            </div>
+            <div class="form-group">
+                <label for="radio" class="col-sm-2 control-label"> Gender</label>
+                <div class="col-sm-8">
+                    <div class="radio block"><label><input type="radio" value="female" name="gender" {% if x.gender == 'female' %} checked {% else %} {% endif %}> Female</label></div>
+                    <div class="radio block"><label><input type="radio" value="male" name="gender"  {% if x.gender == 'male' %} checked {% else %} {% endif %}> Male</label></div>
+                    
+                </div>
+            </div>
+           
+            
+            <div class="form-group" >
+                <label for="smallinput" class="col-sm-2 control-label label-input-sm">Fathers Name </label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1 input-sm" name="fname" value="{{x.fathername}}" placeholder="Small Input">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="smallinput" class="col-sm-2 control-label label-input-sm">Mothers Name </label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1 input-sm" name="mname" value="{{x.mothername}}" placeholder="Small Input">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="mediuminput" class="col-sm-2 control-label">Phone</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1" name="phone"   value="{{x.phone}}"    placeholder="phone">
+                </div>
+            </div>
+            
+            <div class="form-group mb-n">
+                <label for="largeinput" class="col-sm-2 control-label label-input-lg">qualification</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1 input-lg"   name="qualification" value="{{x.qualification}}" placeholder="qualification">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">subject</label>
+                <div class="col-sm-8">
+                    <select multiple="" class="form-control1"   name="subject">
+                    <option value="{{x.subject}}" selected>{{x.subject}}</option>
+                        <option value="biology">BIOLOGY</option>
+                        <option value="computer science"> COMPUTER SCIENCE</option>
+                        <option value="accountancy">ACCOUNTANCY</option>
+                        <option value="chemistry">CHEMISTRY</option>
+                        <option value="physics">PHYSICS</option>
+                        <option value="maths">MATHS</option>
+                        <option value="english">ENGLISH</option>
+                        <option value="malayalm">MALAYALAM</option>
+                        <option value="hindi">HINDI</optiona>
+                        <option value="statistic">STATISTIC</option>
+                       
+                       
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">section</label>
+                <div class="col-sm-8">
+                    <select multiple="" class="form-control1" name="section">
+                        
+                        <option  selected value="{{x.section}}">{{x.section}}</option>
+                        <option value="LP">LP</option>
+                        <option value="UP">UP</option>
+                        <option value="HIGH SCHOOL">HIGH SCHOOL</option>
+                        <option value="HIGHER SECONDARY">HIGHER SECONDARY</option>
+                        
+                       
+                       
+                    </select>
+                </div>
+            </div>
+
+           
+            <div class="form-group">
+                <label for="txtarea1" class="col-sm-2 control-label">experience</label>
+                <div class="col-sm-8"><textarea name="experience" value="{{x.experience}}" id="address" cols="50" rows="4" class="form-control1"></textarea></div>
+            </div>
+            <div class="form-group mb-n">
+                <label for="largeinput" class="col-sm-2 control-label label-input-lg">organisation address</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1 input-lg"   value="{{x.organisation}}" name="organisation" >
+                </div>
+            </div>
+            <div class="form-group mb-n">
+                <label for="largeinput" class="col-sm-2 control-label label-input-lg">designation</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control1 input-lg"  value="{{x.designation}}" name="designation">
+                </div>
+            </div>
+            <div class="form-group"  style="padding-top:  2rem ">
+                <label for="smallinput" class="col-sm-2 control-label label-input-sm">photo</label>
+                <div class="col-sm-8">
+                <img src="{{x.photo.url}}" style="width: 123px;height: 123px;">
+              Do you want to change? <input  type="file" class="form-control" name="image"  style="display: none" placeholder=""  id="chek">
+                <input type="radio" name="imgupdate" value="Yes" id="imgradio" onclick="check()">yes 
+            <input type="radio" name="imgupdate" value="No" id="n" onclick="check()" checked="" >No  
+            </div>
+            </div>
+            
+         
+            <script>
+                function check(){
+
+                var x =document.getElementById('imgradio').checked;
+                if (x!=""){
+                    document.getElementById('chek').style.display='block';
+                }
+                else if (x==""){
+                    document.getElementById('chek').style.display='none';
+                }
+            }
+                
+            </script>
+            <div class="form-group">
+                <label for="txtarea1" class="col-sm-2 control-label">Achievments</label>
+                <div class="col-sm-8">
+                    <textarea name="achievments"  value="{{x.achievments}}" id="address" cols="50" rows="4" class="form-control1"></textarea></div>
+            </div>
+            <div class="form-group" style="padding-top: 2rem " >
+                <label for="smallinput" class="col-sm-2 control-label label-input-sm">document</label>
+                   <div class="col-sm-8">
+                       <input type="text" value="{{x.document.url}}">
+                <input type="file" class="form-control" name="doc"  style="display: none" placeholder=""  id="chek1">
+                <input type="radio" name="imgupdatedoc" value="Yes" id="imgradio1" onclick="checkdoc()">yes 
+            <input type="radio" name="imgupdatedoc" value="No" id="n" onclick="checkdoc()" checked="" >No  
+            </div>
+            
+         </div>
+            <script>
+                function checkdoc(){
+
+                var x =document.getElementById('imgradio1').checked;
+                if (x!=""){
+                    document.getElementById('chek1').style.display='block';
+                }
+                else if (x==""){
+                    document.getElementById('chek1').style.display='none';
+                }
+            }
+                
+            </script> 
+            <div class="form-group mb-n" style="padding: 6rem;" >
+                <div class="col-sm-8 text-center" >
+            <button type="submit"   >UPDATE</button>
+            </div>
+            </div>
+            {% endfor %}
+        </form>
+    </div>
+   </div>
+  
+    {% endblock %}

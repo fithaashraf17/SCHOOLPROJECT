@@ -1,0 +1,75 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+<section class="w3l-contact-info-main" id="contact">
+    <div class="contact-sec	 " >
+        <div class="container-fluid">
+            <div class="main-titles-head text-center">
+                <h3 class="header-name ">
+           Result Record
+                </h3>
+                
+                <div class="border-line "></div>
+                <div class="border-line2 "></div>
+            </div>
+    <div class="bs-docs-example">
+        <div style="overflow-x:auto;">
+        <table class="table " >
+            <thead>
+                <tr>
+               
+                  <th> Name</th>
+                  <th>Email</th>
+                 
+                  <th>Class</th>
+                 
+                  <th> admission no</th>
+                  <th>DIv</th>
+                 
+                  <th> Course</th>
+                  <th>Roll NO</th>
+                  <th>Leave Date</th>
+                  <th>Reason</th>
+    
+                 
+                 
+                  <th>status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for x in reg %}
+                
+                  <td>{{x.studentid.name}}</td>
+                  <td>{{x.studentid.email}}</td>
+                  
+                  <td>{{x.studentid.standard}}</td>
+                 
+                  
+                  <td>{{x.studentid.admission_no}}</td>
+                 
+                  <td>{{x.studentid.feetype}}</td>
+                
+                  <td>{{x.studentid.courseid.coursename}}</td>
+                  <td>{{x.studentid.roll}}</td>
+                  <td>{{x.leavedate}}</td>
+                  <td>{{x.leave_message}}</td>
+<td>{{x.status}}</td>
+                  
+                
+                 
+			
+					
+            
+            </tr>
+
+             {% endfor %}
+                
+              
+              
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+
+{% endblock %}

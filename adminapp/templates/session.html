@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="innerpage_banner py-5">
+	<div class="dot1">
+		
+	</div>
+</section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+            <!-- general form elements -->
+           
+                <h3>Add Session</h3>
+              </div>
+              <form  action="{% url 'addsess'   %}" method="post"> 
+                {% csrf_token %}
+                <div class="card-body">
+                  <div class="form-group">
+                    <label>Session start</label>
+                    <input type="date" class="form-control" name="start" placeholder="Enter Session start">
+                  </div>
+                   
+
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                      <label>Session End</label>
+                      <input type="date" class="form-control" name="end" placeholder="Enter Session end">
+                    </div>
+                     
+  
+                  </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary btn-block">Add Session</button>
+                </div>
+               </form> 
+            </div>
+            <!-- /.card -->
+
+
+
+          </div>
+          </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock %}

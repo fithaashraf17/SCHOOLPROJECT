@@ -1,0 +1,146 @@
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+		<!-- //header-ends -->
+		<!-- main content start-->
+		{% extends "base.html" %}
+{% block content %}
+		<div id="page-wrapper">
+			<div class="main-page">
+				<div class="tables">
+					
+					<div class="panel-body widget-shadow">
+						<h4>Student Table:</h4>
+						<table class="table">
+							<thead>
+								<tr>
+								  <th>#</th>
+								  <th>Username</th>
+                    <th>Password</th>
+                    
+                    <th>Email</th>
+                    <th>del</th>
+                    <th>edit</th>
+                    <th>
+                        status
+                    </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									{% for x in reg %}
+								
+								  <td>{{forloop.counter}}</td>
+        
+                    <td>{{x.name}}</td>
+                    <td>{{x.password}}</td>
+           
+                    <td>{{x.email}}</td>
+                    <td><a href="/delete/?id={{x.id}}">del</a></td>
+                    <td><a href="/edit/?id={{x.id}}">edit</a></td>
+                    {% if x.status == 'pending' %}
+                    <td><a href="/status/?id={{x.id}}">approve
+                        {% else %}
+                        {% endif %}
+					</td>
+								</tr>
+
+								{% endfor %}
+							</tbody>
+						</table>
+				
+				</div>
+				<div class="tables">
+
+					
+						<h4>Teacher Table:</h4>
+						<table class="table">
+							<thead>
+								<tr>
+								  <th>#</th>
+								  <th>Username</th>
+                    <th>Password</th>
+                    
+                    <th>Email</th>
+                    <th>del</th>
+                    <th>edit</th>
+                    <th>
+                        status
+                    </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									{% for x in reg1 %}
+								
+								  <td>{{forloop.counter}}</td>
+        
+                    <td>{{x.name}}</td>
+                    <td>{{x.password}}</td>
+           
+                    <td>{{x.email}}</td>
+                    <td><a href="/delete/?id={{x.id}}">del</a></td>
+                    <td><a href="/edit/?id={{x.id}}">edit</a></td>
+                    {% if x.status == 'pending' %}
+                    <td><a href="/status/?id={{x.id}}">approve
+                        {% else %}
+                        {% endif %}
+					</td>
+								</tr>
+
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+					<div class="tables">
+
+					
+						<h4>Staff Table:</h4>
+						<table class="table">
+							<thead>
+								<tr>
+								  <th>#</th>
+								  <th>Username</th>
+                    <th>Password</th>
+                    
+                    <th>Email</th>
+                    <th>del</th>
+                    <th>edit</th>
+                    <th>
+                        status
+                    </th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									{% for x in reg2 %}
+								
+								  <td>{{forloop.counter}}</td>
+        
+                    <td>{{x.name}}</td>
+                    <td>{{x.password}}</td>
+           
+                    <td>{{x.email}}</td>
+                    <td><a href="/delete/?id={{x.id}}">del</a></td>
+                    <td><a href="/edit/?id={{x.id}}">edit</a></td>
+                    {% if x.status == 'pending' %}
+                    <td><a href="/status/?id={{x.id}}">approve
+                        {% else %}
+                        {% endif %}
+					</td>
+								</tr>
+
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			
+			</div>
+			
+		</div>
+		{% endblock %}

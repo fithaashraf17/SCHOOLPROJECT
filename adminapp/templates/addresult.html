@@ -1,0 +1,101 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- <div class="panel panel-widget"> -->
+    <div class="bs-docs-example">
+        <div style="overflow-x:auto;">
+        <table class="table " >
+            <thead>
+                <h2 style="text-align: center;">11 A</h2>
+                <tr>
+                  <th>#</th>
+                  <th> Name</th>
+                  
+                 
+                  <th> admission no</th>
+                 
+                  
+                
+                  <th>Roll NO</th>
+                  <th>Register NO</th>
+                  <th>Session</th>
+                  <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for x in s %}
+                  <td>{{forloop.counter}}</td>
+                  <td>{{x.name}}</td>
+                  
+         
+                 
+                  <td>{{x.admission_no}}</td>
+                 
+           
+                  
+                  <td>{{x.roll}}</td>
+                  <td>{{x.regno}}</td>
+                  <td>{{x.sesid.session_start_year}}-{{x.sesid.session_start_year}}</td>
+
+
+                
+                  <td><a href= "{% url 'addresult' %}?id={{x.id}}">ADD RESULT</a></td>
+			
+                
+                </tr>
+
+                      {% endfor %}
+            </tbody>
+        </table>
+        <table class="table " >
+            <thead>
+                <h2 style="text-align: center;">12 B</h2>
+                <tr>
+                  <th>#</th>
+                  <th> Name</th>
+                  
+         
+                 
+                  <th> admission no</th>
+                 
+              
+                
+                  <th>Roll NO</th>
+                  <th>Register NO</th>
+                  <th>Session</th>
+                  <th></th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for x in s1 %}
+                  <td>{{forloop.counter}}</td>
+                  <td>{{x.name}}</td>
+                  
+                  
+                 
+                  <td>{{x.admission_no}}</td>
+                 
+              
+                  
+                  <td>{{x.roll}}</td>
+                  <td>{{x.regno}}</td>
+                  <td>{{x.sesid.session_start_year}}-{{x.sesid.session_start_year}}</td>
+
+
+                
+                  <td><a href= "{% url 'addresult' %}?id={{x.id}}">ADD RESULT</a></td>
+			
+                
+                </tr>
+
+                      {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+
+{% endblock %}

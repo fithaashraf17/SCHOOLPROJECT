@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="innerpage_banner py-5">
+	<div class="dot1">
+		
+	</div>
+</section>
+<h2>{{msg}}</h2>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+            <!-- general form elements -->
+           
+                <h3> UPDATE ATTENDANCE</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+         {% for x in q %}
+               <form  action="{% url 'updatestudentattendance'  %}?id={{x.id}}" method="post"> 
+                {% csrf_token %}
+                <div class="form-group">
+                  <label for="disabledinput" class="col-sm-2 control-label">Name</label>
+                    <input type="text" name="name" value="{{x.studentid.name}}">
+                </div>
+                    <div class="form-group">
+                      <label for="disabledinput" class="col-sm-2 control-label">Class</label>
+                      <input type="text" name="clas" value="{{x.studentid.standard}}">
+                    </div>
+                    <div class="form-group">
+                      <label for="disabledinput" class="col-sm-2 control-label">Division</label>
+                        <input type="text" name="div" value="{{x.studentid.feetype}}">
+                      </div>
+                      <div class="form-group">
+                        <label for="disabledinput" class="col-sm-2 control-label">Roll No</label>
+                        <input type="text" name="roll" value="{{x.studentid.roll}}">
+                      </div>
+                      
+                      <div class="card-body">
+                        <div class="form-group">
+                          <label for="disabledinput" class="col-sm-2 control-label">Month</label>
+                          <input type="text" class="form-control" name="month"  value="{{x.month}}" placeholder="Enter month">
+                        </div>
+                        <div class="card-body">
+                            <div class="form-group">
+                              <label for="disabledinput" class="col-sm-2 control-label">Total Lecture in Month</label>
+                              <input type="text" class="form-control" name="total" placeholder=""  value="{{x.total_lec}}">
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                  <label for="disabledinput" class="col-sm-2 control-label">TOTAL ATTENDED LECTURES</label>
+                                  <input type="text" class="form-control" name="attended" placeholder=""  value="{{x.lec_attended}}">
+                                </div>
+                                   
+                                <div class="card-body">
+                                  <div class="form-group">
+                                    <label for="disabledinput" class="col-sm-2 control-label">Status</label>
+                                    <input type="text" class="form-control" name="status"  value="{{x.status}}" placeholder="">
+                                  </div>
+                                     
+                        
+                    <div class="card-footer">
+                  <button type="submit" class="btn btn-primary btn-block">Update Attendance</button>
+                </div>
+                {% endfor %}
+                </form>
+            <!-- /.card -->
+
+
+
+          </div>
+          </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock %}

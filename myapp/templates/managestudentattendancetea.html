@@ -1,0 +1,113 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+<!-- <div class="panel panel-widget"> -->
+  
+    <div class="bs-docs-example" style="padding-top: 5rem;">
+        <div style="overflow-x:auto;">
+
+       
+        <table class="table " >
+          <h3 style="text-align: center;">11 A</h3>
+            <thead>
+                <tr>
+                  <th>#</th>
+                  <th> Name</th>
+          
+                 
+                 
+                  <th> admission no</th>
+                 
+                  <th>Roll </th>
+                  <th>TAKE ATTENDANCE</th>
+            
+                  
+                  
+                 
+    
+                 
+             
+             
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for x in s %}
+                  <td>{{forloop.counter}}</td>
+                  <td>{{x.name}}</td>
+           
+                  
+
+                
+                  <td>{{x.admission_no}}</td>
+             
+                  <td>{{x.roll}}</td>
+          <td><a href="/attendancepagetea/?id={{x.id}}">ATTENDANCE</a></td>
+                  
+
+                 
+					
+
+       
+                
+                </tr>
+                {% endfor %}
+              
+            </tbody>
+        </table>
+        <table class="table " >
+          <h3 style="text-align: center; padding:  2rem 2rem 2rem 2rem";>12 B</h3>
+            <thead>
+                <tr>
+                  <th>#</th>
+                  <th> Name</th>
+          
+                 
+                 
+                  <th> admission no</th>
+                 
+                  <th>Roll </th>
+                  <th>TAKE ATTENDANCE</th>
+               
+                  
+                  
+                 
+    
+                 
+             
+             
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for x in s1 %}
+                  <td>{{forloop.counter}}</td>
+                  <td>{{x.name}}</td>
+           
+                  
+
+                
+                  <td>{{x.admission_no}}</td>
+             
+                  <td>{{x.roll}}</td>
+          <td><a href="/attendancepagetea/?id={{x.id}}">ATTENDANCE</a></td>
+                 
+
+                 
+					
+
+       
+                
+                </tr>
+                {% endfor %}
+              
+            </tbody>
+        </table>
+       
+    </form>
+    </div>
+</div>
+
+
+{% endblock %}
+                 
+                  

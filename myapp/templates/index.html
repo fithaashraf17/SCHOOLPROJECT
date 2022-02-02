@@ -1,0 +1,607 @@
+<!--
+	Author: W3layouts
+	Author URL: http://w3layouts.com
+	License: Creative Commons Attribution 3.0 Unported
+	License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+<!-- //Navigation -->
+<!--Slider-->
+{% extends "headerfooter.html" %}
+{% block content %}
+<h1 style="text:red;">{{msg}}</h1>
+<!-- <header>
+	
+		
+	<div class="top-nav">
+		<div class="container-fluid">
+			<nav class="navbar navbar-e-lg navbar-light">
+				 <a class="navbar-brand text-uppercase" href="/">Success path <i class="fab fa-studiovinari"></i></a> 
+				<button class="navbar-toggler btn-secondary" type="button"  data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-center pr-md-4  md-bg-grey-100" id="navbarSupportedContent">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="about.html">About</a>
+						</li>
+						<li class="dropdown nav-item">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Students Services
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu agile_short_dropdown" >
+									<a href="/leavestudent/">Apply for Leave</a>
+								</li>
+								<li>
+									<a href="/studentleavestatus/">Leave status</a>
+								</li>
+								<li>
+									<a href="/payfee/">Pay Fees</a>
+								</li>
+							</li>
+							<li>
+								<a href="/examfee/">Pay Exam Fees</a>
+							</li>
+							<li>
+								<a href="/timetablepage/">Time Table</a>
+							</li>
+							<li>
+								<a href="/result/">Result</a>
+							</li>
+							
+							
+							
+							</ul>
+						</li>
+						
+						<li class="dropdown nav-item">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Teachers Services
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu bg-secondary dropdown-menu-light mx-0 border-0 shadow" style="width: 220px;">
+								<li>
+								  <a class="dropdown-item d-flex gap-2 align-items-center" href="/manageattendancetea/">
+									<i class="fas fa-pen"></i>
+									Attendance
+								  </a>
+								</li>
+								<li>
+								  <a class="dropdown-item d-flex gap-2 align-items-center" href="/leaveteacher/">
+									
+									Apply for Leave
+								  </a>
+								</li>
+								<li>
+								  <a class="dropdown-item d-flex gap-2 align-items-center" href="/teachleavestatus/">
+								
+									Leave Status
+								  </a>
+								</li>
+								<li>
+								  <a class="dropdown-item d-flex gap-2 align-items-center" href="/managestudentleave/">
+									
+									Students Leave Management
+								  </a>
+								</li>
+								<li>
+								  <a class="dropdown-item d-flex gap-2 align-items-center" href="/resultrec/">
+								
+									Result Record
+								  </a>
+								</li>
+								<li><hr class="dropdown-divider"></li>
+								<li>
+								  <a class="dropdown-item d-flex gap-2 align-items-center" href="#">
+									<svg class="bi" width="16" height="16"><use xlink:href="#trash"></use></svg>
+									Trash
+								  </a>
+								</li>
+							  </ul>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="contact.html">Contact</a>
+						</li>
+                        <li class="nav-item">
+							{% if request.session.myid %}
+                        {{request.session.name}}
+						<a class="nav-link" href="/myaccount/">Me</a>
+						<a class="nav-link" href="/logout/">Logout</a>
+						
+				
+						{% elif request.session.teachid %}
+					{{request.session.name}}
+					<a class="nav-link" href="/myaccountteach/">Me</a>
+					<a class="nav-link" href="/logout/">Logout</a>
+
+
+						{% else %}
+						<li class="dropdown nav-item">
+							<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">Login
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu agile_short_dropdown">
+								<li>
+									<a href="/loginstudent/">Student</a>
+								</li>
+								<li>
+									<a href="/loginteach/">Teacher</a>
+								</li>
+							</ul>
+						</li>
+
+
+
+
+							
+
+							
+							{% endif %}
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+	</div>
+	
+</header> -->
+
+<div class="slider">
+	<div class="callbacks_container">
+		<ul class="rslides callbacks callbacks1" id="slider4">
+			<li>
+				<div class="slider-img1">
+					<div class="dot">
+						<div class="container">
+							<div class="slider_banner_info_w3ls">
+								<h1 class="text-uppercase mb-3">Grow up future choose right career</h1>
+								<p>Etiam vitae augue odio. Ut laoreet ipsum vel ultrices viverra. Donec nisl dolor,
+									mollis vel libero id,
+									tempor cursus lectus. Vestibulum eu ligula et pharetra efficitur. Maecenas eleifend.
+								</p>
+
+								<a href="single.html" class="read" data-toggle="modal" data-target="#exampleModalCenter"
+									role="button">Read more </a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="slider-img2">
+					<div class="dot">
+						<div class="container">
+							<div class="slider_banner_info_w3ls">
+								<h4 class="text-uppercase mb-3">We help you education to future</h4>
+								<p>Etiam vitae augue odio. Ut laoreet ipsum vel ultrices viverra. Donec nisl dolor,
+									mollis vel libero id,
+									tempor cursus lectus. Vestibulum eu ligula et pharetra efficitur. Maecenas eleifend.
+								</p>
+
+								<a href="#" class="read" data-toggle="modal" data-target="#exampleModalCenter"
+									role="button">Read more </a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="slider-img3">
+					<div class="dot">
+						<div class="container">
+							<div class="slider_banner_info_w3ls">
+								<h4 class="text-uppercase mb-3">Take the help from experts staff</h4>
+								<p>Etiam vitae augue odio. Ut laoreet ipsum vel ultrices viverra. Donec nisl dolor,
+									mollis vel libero id,
+									tempor cursus lectus. Vestibulum eu ligula et pharetra efficitur. Maecenas eleifend.
+								</p>
+
+								<a href="#" class="read" data-toggle="modal" data-target="#exampleModalCenter"
+									role="button">Read more </a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			<li>
+				<div class="slider-img4">
+					<div class="dot">
+						<div class="container">
+							<div class="slider_banner_info_w3ls">
+								<h4 class="text-uppercase mb-3">We provide quality education to future</h4>
+								<p>Etiam vitae augue odio. Ut laoreet ipsum vel ultrices viverra. Donec nisl dolor,
+									mollis vel libero id,
+									tempor cursus lectus. Vestibulum eu ligula et pharetra efficitur. Maecenas eleifend.
+								</p>
+
+								<a href="#" class="read" data-toggle="modal" data-target="#exampleModalCenter"
+									role="button">Read more </a>
+							</div>
+						</div>
+					</div>
+				</div>
+	</div>
+	</li>
+	<div class="clearfix"></div>
+	</ul>
+</div>
+<!-- <div class="container-fluid" style="background-color: rgba(12, 15, 26, 0.897);"> -->
+<div class="fullwidth">
+	<div class="vc_row wpb_row vc_row-fluid vc_row-no-padding vc_row-o-equal-height vc_row-flex">
+		<div class="col-md-3 col-sm-6 wpb_column vc_column_container vc_col-sm-3 vc_col-has-fill">
+			<div class="vc_column-inner vc_custom_1598903823716">
+				<div class="wpb_wrapper">
+					<div class="iconbox style4 color-light ">
+						<div> <i class="fas fa-school"></i></div> <a class="p-font heading-color" title=""
+							target="_self" href="/orgin-history">THE SCHOOL</a>
+						<p>Our school with a student strength of around 3000, is affiliated to the Council for Indian
+							School Certificate Examination. It is owned and run by the Arch Diocese of Kottayam.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-6 wpb_column vc_column_container vc_col-sm-3 vc_col-has-fill">
+			<div class="vc_column-inner vc_custom_1598839431828">
+				<div class="wpb_wrapper">
+					<div class="iconbox style4 color-light ">
+						<div> <i class="fas fa-book-reader"></i></div> <a class="p-font heading-color" title=""
+							target="_self" href="/admission">ADMISSIONS</a>
+						<p>Parents seeking admission for your child in our school or if you need more information about
+							the school admissions and procedures could checkout this area.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-6 wpb_column vc_column_container vc_col-sm-3 vc_col-has-fill">
+			<div class="vc_column-inner vc_custom_1598839491574">
+				<div class="wpb_wrapper">
+					<div class="iconbox style4 color-light ">
+						<div> <i class="fas fa-microscope"></i></div> <a class="p-font heading-color" title=""
+							target="_self" href="/facilities">FACILITIES</a>
+						<p>Our focus is to improve the level of education and therefore we have put together for our
+							pupils the most reliable and high-quality modern facilities.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-3 col-sm-6 wpb_column vc_column_container vc_col-sm-3 vc_col-has-fill">
+			<div class="vc_column-inner vc_custom_1598839543526">
+				<div class="wpb_wrapper">
+					<div class="iconbox style4 color-light ">
+						<div> <i class="fas fa-chalkboard-teacher"></i></div> <a class="p-font heading-color" title=""
+							target="_self" href="https://sreepuramems.org/online-classrooms/">ONLINE COACHING</a>
+						<p>In light of the Pandemic situation, we have taken necessary measures to conduct daily online
+							coaching for the benefit of our students.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--//Slider-->
+<!-- About us -->
+<div class="about-3 py-5">
+	<div class="container py-md-3">
+		<div class="w3-head-all mb-3">
+			<h3>Welcome</h3>
+		</div>
+		<div class="d-flex">
+			<div class="about1">
+				<h4>WE ARE THE LEADERS IN THE ONLINE EDUCATION.</h4>
+				<p class="details">Nullam pulvinar vulputate aliquam. Pellentesque venenatis ut mi ac porta. Praesent
+					interdum nibh libero, id malesuada libero aliquet quis. Donec at odio nibh.</p>
+				<ul class="about-list">
+					<li>
+						<span class="fas fa-chess-rook" aria-hidden="true"></span>
+						<div class="in-block">
+							<h5>Our Mission</h5>
+							<p>Suspendisse maximus leo vel facilisis porta. Aliquam posuere mollis auctor. Nunc eget
+								massa eleifend, finibus felis eu, tincidunt eros.</p>
+						</div>
+					</li>
+					<li>
+						<span class="fab fa-accessible-icon" aria-hidden="true"></span>
+						<div class="in-block">
+							<h5>Our Activity</h5>
+							<p>Suspendisse maximus leo vel facilisis porta. Aliquam posuere mollis auctor. Nunc eget
+								massa eleifend, finibus felis eu, tincidunt eros.</p>
+						</div>
+					</li>
+					<li>
+						<span class="fas fa-bus" aria-hidden="true"></span>
+						<div class="in-block">
+							<h5>Our Vission</h5>
+							<p>Suspendisse maximus leo vel facilisis porta. Aliquam posuere mollis auctor. Nunc eget
+								massa eleifend, finibus felis eu, tincidunt eros.</p>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="about2">
+
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- //About us -->
+
+<!-- /services-home -->
+<div class="programs py-5">
+	<div class="w3-head-all mb-3">
+		<h3>Our programs</h3>
+	</div>
+	<div class="grids_sec_2">
+		<div class="row style-grids_main">
+			<div class="col-md-6 grid_sec_info">
+				<div class="style-grid-2-text_info" data-aos="fade-right">
+					<h3>WHY DID THAT STUDENT FAIL AND HOW NOT TO FAIL?</h3>
+					<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias consequatur.sed quia
+						non numquam eius modi
+						tempora incidunt ut labore .</p>
+					<div class="bnr-button">
+						<a href="#" class="read" data-toggle="modal" data-target="#exampleModalCenter"
+							role="button">Read more </a>
+					</div>
+
+				</div>
+			</div>
+			<div class="col-md-6 style-image-2">
+			</div>
+			<div class="col-md-6 style-image-2 second">
+			</div>
+			<div class="col-md-6 grid_sec_info">
+				<div class="style-grid-2-text_info" data-aos="fade-right">
+					<h3>15 STUDENT-CENTERED INSTRUCTIONAL STRATEGIES</h3>
+					<p>Itaque earum rerum hic tenetur a sapiente delectus reiciendis maiores alias consequatur.sed quia
+						non numquam eius modi
+						tempora incidunt ut labore .</p>
+					<div class="bnr-button">
+						<a href="#" class="read" data-toggle="modal" data-target="#exampleModalCenter"
+							role="button">Read more </a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- //services-home -->
+<!-- features -->
+<div class="features py-5">
+	<div class="container-fluid  py-md-3">
+		<div class="w3-head-all mb-3">
+			<h3>Our Training</h3>
+		</div>
+		<div class="tabs w3-agileits-tabs">
+			<!-- Nav tabs -->
+			<ul class="nav nav-tabs" role="tablist">
+				<li class="active"><a href="#home" aria-controls="home" data-toggle="tab"><span>Popular
+							Courses</span></a></li>
+				<li><a href="#profile" aria-controls="profile" data-toggle="tab"><span>Best Teachers</span></a></li>
+				<li><a href="#messages" aria-controls="messages" data-toggle="tab"><span>Certification</span></a></li>
+				<li><a href="#settings" aria-controls="settings" data-toggle="tab"><span>Placements</span></a></li>
+			</ul>
+			<!-- Tab panes -->
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active row" id="home">
+					<div class="col-lg-6  col-md-12 features-right">
+						<div class="agileits-mid">
+							<h6>- Our Features</h6>
+							<h3> Mauris commodo </h3>
+						</div>
+						<p>Fusce eget erat nunc. Sed fringilla sem vitae mi interdum commodo. Aliquam neque odio,
+							viverra eget nisl id, vulputate malesuada lorem. Praesent quis ullamcorper lorem vulputate
+							malesuada lorem. </p>
+					</div>
+					<div class="col-lg-6 col-md-12 features-left agileinfo-img">
+
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div role="tabpanel" class="tab-pane row" id="profile">
+					<div class="col-lg-6 col-md-12 features-right">
+						<div class="agileits-mid">
+							<h6>- Our Features</h6>
+							<h3> Mauris commodo </h3>
+						</div>
+						<p>Fusce eget erat nunc. Sed fringilla sem vitae mi interdum commodo. Aliquam neque odio,
+							viverra eget nisl id, vulputate malesuada lorem. Praesent quis ullamcorper lorem vulputate
+							malesuada lorem. </p>
+					</div>
+					<div class="col-lg-6 col-md-12 features-left agileinfo-img2">
+
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div role="tabpanel" class="tab-pane row" id="messages">
+					<div class="col-lg-6 col-md-12 features-right w3-agile">
+						<div class="agileits-mid">
+							<h6>- Our Features</h6>
+							<h3> Mauris commodo </h3>
+						</div>
+						<p>Fusce eget erat nunc. Sed fringilla sem vitae mi interdum commodo. Aliquam neque odio,
+							viverra eget nisl id, vulputate malesuada lorem. Praesent quis ullamcorper lorem vulputate
+							malesuada lorem. </p>
+					</div>
+					<div class="col-lg-6 col-md-12 features-left agileinfo-img3">
+
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div role="tabpanel" class="tab-pane row" id="settings">
+					<div class="col-lg-6 col-md-12 features-right">
+						<div class="agileits-mid">
+							<h6>- Our Features</h6>
+							<h3> Mauris commodo </h3>
+						</div>
+						<p>Fusce eget erat nunc. Sed fringilla sem vitae mi interdum commodo. Aliquam neque odio,
+							viverra eget nisl id, vulputate malesuada lorem. Praesent quis ullamcorper lorem vulputate
+							malesuada lorem. </p>
+					</div>
+					<div class="col-lg-6 col-md-12 features-left agileinfo-img4">
+
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+		</div><!-- /tabs -->
+	</div>
+</div>
+<!-- //features -->
+<!-- agile_testimonials -->
+<!-- Clients -->
+<section class="clients-main py-5" id="testimonials">
+	<div class="container py-md-3">
+		<div class="w3-head-all mb-3">
+			<h3>Clients Reviews</h3>
+		</div>
+		<!-- Owl-Carousel -->
+		<div class="cli-ent">
+			<section class="slider">
+				<div class="flexslider">
+					<ul class="slides">
+						<li>
+							<div class="item g1">
+								<div class="agile-dish-caption">
+									<img class="lazyOwl" src="/static/images/test1.jpg" alt="" />
+									<h5 class="text-capitalize font-italic">Michael</h5>
+									<h4 class="text-capitalize">Great Industrial work</h4>
+								</div>
+
+								<div class="clearfix"></div>
+								<p class="para-w3-agile text-center"><span class="fa fa-quote-left"
+										aria-hidden="true"></span> Phasellus iaculis sapien in tellus gravida, a
+									placerat lacus elementum. Nulla vitae lacus nec elit mollis pretium. Sedminc sed
+									nunc lectus. Integer vehicula elit eget dignissim congue. Aliquam sed ultricies
+									tortor. Curabitur ut odio vestibulum consectetur adipisthn</p>
+							</div>
+						</li>
+						<li>
+							<div class="item g1">
+								<div class="agile-dish-caption">
+									<img class="lazyOwl" src="/static/images/test2.jpg" alt="" />
+									<h5 class="text-capitalize font-italic">libero</h5>
+									<h4 class="text-capitalize">High quality materials</h4>
+								</div>
+
+								<div class="clearfix"></div>
+								<p class="para-w3-agile text-center"><span class="fa fa-quote-left"
+										aria-hidden="true"></span> Phasellus iaculis sapien in tellus gravida, a
+									placerat lacus elementum. Nulla vitae lacus nec elit mollis pretium. Sedminc sed
+									nunc lectus. Integer vehicula elit eget dignissim congue. Aliquam sed ultricies
+									tortor. Curabitur ut odio vestibulum consectetur adipisthn</p>
+							</div>
+						</li>
+						<li>
+							<div class="item g1">
+								<div class="agile-dish-caption">
+									<img class="lazyOwl" src="/static/images/test3.jpg" alt="" />
+									<h5 class="text-capitalize font-italic">Alex</h5>
+									<h4 class="text-capitalize">Innovative Industrial Solutions</h4>
+								</div>
+
+								<div class="clearfix"></div>
+								<p class="para-w3-agile text-center"><span class="fa fa-quote-left"
+										aria-hidden="true"></span> Phasellus iaculis sapien in tellus gravida, a
+									placerat lacus elementum. Nulla vitae lacus nec elit mollis pretium. Sedminc sed
+									nunc lectus. Integer vehicula elit eget dignissim congue. Aliquam sed ultricies
+									tortor. Curabitur ut odio vestibulum consectetur adipisthn</p>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</div>
+		<!--// Owl-Carousel -->
+	</div>
+</section>
+<!--// Clients -->
+
+<!-- //agile_testimonials -->
+<!-- stats -->
+<div class="stats">
+	<div class="container">
+		<div class="wthree_head_section stats_head">
+			<h3>We are always ahead
+				Professional Education for Your Future.</h3>
+		</div>
+		<div class="row">
+			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6 
+			w3layouts_stats_left w3_counter_grid">
+				<span class="fas fa-smile" aria-hidden="true"></span>
+				<p class="counter">6000</p>
+				<h3>HAPPY CUSTOMERS</h3>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6   w3layouts_stats_left w3_counter_grid1">
+				<span class="fas fa-bookmark" aria-hidden="true"></span>
+				<p class="counter">165</p>
+				<h3>APPROVED COURSES</h3>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6  w3layouts_stats_left w3_counter_grid2">
+				<span class="fas fa-users" aria-hidden="true"></span>
+				<p class="counter">30</p>
+				<h3>CERTIFIED TEACHERS</h3>
+			</div>
+			<div class="col-lg-3 col-md-6 col-sm-6 col-xs-6  w3layouts_stats_left w3_counter_grid3">
+				<span class="fas fa-trophy" aria-hidden="true"></span>
+				<p class="counter">500</p>
+				<h3>AWARDS WON</h3>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!-- //stats -->
+
+
+<!-- appointment -->
+<div class="appointment" id="appointment">
+	<div class="container-fluid  py-md-3">
+		<div class="row">
+			<div class="col-md-5 about-bottoml-agileits">
+			</div>
+			<div class="col-md-7 about-bottomr-agileits">
+				<div class="appointment_head">
+					<h3>Make An Appointment </h3>
+				</div>
+				<div class="form-agileits">
+					<form action="/appointment/" method="post">
+						{% csrf_token %}
+						<h6>Personal information</h6>
+						<input class="name" type="text" name="First Name" placeholder="First Name" required="">
+						<input type="text" name="Last Name" placeholder="Last Name" required="">
+						<input class="name" type="email" name="Email" placeholder="Email" required="">
+						<input type="text" name="Phone" placeholder="Phone" required="">
+						<div class="clearfix"> </div>
+					
+						
+						<input id="datepicker1" name="date" type="text" value="" onfocus="this.value = '';"
+							onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}" placeholder="mm/dd/yyyy"
+							required="">
+						<div class="clearfix"> </div>
+						<div class="wthree-text">
+							<ul>
+								<li>
+									<label class="anim">
+										<input type="checkbox" class="checkbox">
+										<span> Please send me latest news & updates</span>
+									</label>
+								</li>
+							</ul>
+							<div class="clearfix"> </div>
+						</div>
+						<input type="submit" value="Submit">
+					</form>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+<!-- //appointment -->
+
+<!-- footer -->

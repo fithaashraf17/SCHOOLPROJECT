@@ -1,0 +1,100 @@
+<!-- //Navigation -->
+{% extends "headerfooter.html" %}
+{% block content %}
+<!-- inner page banner -->
+<section class="innerpage_banner py-5">
+	<div class="dot1">
+		
+	</div>
+</section>
+<h3>{{msg}}</h3>
+
+<!-- //inner page banner -->
+<!-- mail -->
+				
+<section class="w3l-contact-info-main" id="contact">
+    <div class="contact-sec	">
+        <div class="container">
+            <div class="main-titles-head text-center">
+                <h3 class="header-name ">
+                FEE PAYMENT
+                </h3>
+                
+                <div class="border-line "></div>
+                <div class="border-line2 "></div>
+            </div>
+            
+         
+<div class="back-color">
+{% for  x in usr %}
+<form action="/payfee/" method="POST">
+    {% csrf_token %}
+
+        
+<div class="form-group">
+<label for="exampleInputEmail1">Name</label>
+<input type="text" class="form-control" id="exampleInputEmail1"   name="name" value="{{x.name}}" >
+</div>
+<input type="hidden" value="{{x.id}}" name="myid" required="" readonly>
+        
+<div class="form-group">
+    <label for="exampleInputEmail1">Class</label>
+    <input type="text" class="form-control" id="exampleInputEmail1"   name="class" value="{{x.standard}}" >
+    </div>
+    
+    
+
+
+<div class="form-group">
+<label for="exampleInputPassword1">division</label>
+<input type="text" class="form-control" id="exampleInputPassword1" name="division" value="{{x.feetype}}" >
+</div> 
+<h3 class="pay-title">Credit Card Info</h3>
+											
+<div class="tab-for">				
+<h5>NAME ON CARD</h5>
+<input type="text" value="">
+<h5>CARD NUMBER</h5>													
+	<input class="pay-logo" type="text" value="0000-0000-0000-0000" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '0000-0000-0000-0000';}" required="">
+												</div>	
+<div class="transaction">
+<div class="tab-form-left user-form">
+<h5>EXPIRATION</h5>
+<ul>
+<li>
+<input type="number" class="text_box" type="text" value="6" min="1" />
+<input type="number" class="text_box" type="text" value="1988" min="1" />	
+</li>
+																
+</ul>
+</div>
+<div class="tab-form-right user-form-rt">
+		<h5>CVV NUMBER</h5>													
+		<input type="text" value="xxxx" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'xxxx';}" required="">
+	</div>
+	<div class="clear"></div>
+</div>
+<div class="tab-for">
+	<h5>Amount</h5>													
+	<input type="text" value="{{fee}}" name="amount" required="" readonly>
+
+</div>
+												
+
+  
+
+ 
+                    <div class="form-group-2">
+                        <button type="submit" class="btn action-button mt-3" style="text-align: center;">Pay</button>
+                    </div>
+            </div>
+            {% endfor %}
+            </form>
+
+        </div>
+        </div>        
+    </div>
+    </div>
+</form>
+</section>
+ {% endblock %}

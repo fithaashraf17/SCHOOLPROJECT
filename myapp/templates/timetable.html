@@ -1,0 +1,124 @@
+{% extends "headerfooter.html" %}
+{% block content %}
+<!-- <div class="panel panel-widget"> -->
+    
+    <section class="w3l-contact-info-main" id="contact">
+    <div class="contact-sec	">
+        <div class="container">
+            <div class="main-titles-head text-center">
+                <h3 class="header-name ">
+            TIME TABLE
+                </h3>
+                
+                <div class="border-line "></div>
+                <div class="border-line2 "></div>
+            </div>
+            <div align="center" style="color: red;">{{msgkey}}</div>
+            <div class="" data-selector="header11">
+<div class="back">
+        <table class="table "  >
+            <h3 style="text-align: center; padding:  2rem 2rem 2rem 2rem";>11 A</h3>
+     
+            <thead>
+             
+                <tr>
+              
+                 
+                  <th>DAY</th>
+                  <th>PERIOD 1</th>
+                  <th> PERIOD 2</th>
+                  <th>BREAK</th>
+                  <th>PERIOD 3</th>
+                  <th>PERIOD 4</th>
+                  <th>LUNCH</th>
+                  <th>PERIOD 5</th>
+              
+         
+                
+                 
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    {% for x in reg %}
+                 
+                
+                  <td>{{x.day}}</td>
+                  
+                  <td>{{x.period1}}</td>
+                  <td>{{x.period2}}</td>
+                  <td>***</td>
+                  <td>{{x.period3}}</td>
+                  <td>{{x.period4}}</td>
+                  <td>****</td>
+                  <td>{{x.period5}}</td>
+
+                
+               
+
+          
+                
+                </tr>
+                {% endfor %}
+              
+            </tbody>
+        </table>
+        <br>
+        <br>
+        <table class="table "  >
+            <h3 style="text-align: center; padding:  2rem 2rem 2rem 2rem";>12 A</h3>
+     
+            <thead>
+                <tr>
+                
+                  
+                  <th>DAY</th>
+                  <th>PERIOD 1</th>
+                  <th> PERIOD 2</th>
+                  <th>BREAK</th>
+                  <th>PERIOD 3</th>
+                  <th>PERIOD 4</th>
+                  <th>LUNCH</th>
+                  <th>PERIOD 5</th>
+              
+         
+                
+                 
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    {% for x in reg1 %}
+                  
+               
+                  <td>{{x.day}}</td>
+                  
+
+                  
+                  <td>{{x.period1}}</td>
+                  <td>{{x.period2}}</td>
+                  <td>***</td>
+                  <td>{{x.period3}}</td>
+                  <td>{{x.period4}}</td>
+                  <td>****</td>
+                  <td>{{x.period5}}</td>
+
+                
+               
+
+          
+                
+                </tr>
+                {% endfor %}
+              
+            </tbody>
+        </table>
+    </div>
+        </div>
+</div>
+            </div></div>
+</section>
+
+{% endblock %}

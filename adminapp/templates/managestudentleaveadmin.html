@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- <div class="panel panel-widget"> -->
+    <div class="bs-docs-example">
+        <div style="overflow-x:auto;">
+        <table class="table " >
+            <thead>
+                <tr>
+                  <th>#</th>
+                  <th> Name</th>
+                  <th>Email</th>
+                 
+                  <th>Class</th>
+                 
+                  <th> admission no</th>
+                  <th>DIv</th>
+                 
+                  <th> Course</th>
+                  <th>Roll NO</th>
+                  <th>Leave Date</th>
+                  <th>Reason</th>
+    
+                 
+                  <th>delete</th>
+                  <th>status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    {% for x in reg %}
+                  <td>{{forloop.counter}}</td>
+                  <td>{{x.studentid.name}}</td>
+                  <td>{{x.studentid.email}}</td>
+                  
+                  <td>{{x.studentid.standard}}</td>
+                 
+                  
+                  <td>{{x.studentid.admission_no}}</td>
+                 
+                  <td>{{x.studentid.feetype}}</td>
+                
+         
+                  <td>{{x.studentid.courseid.coursename}}</td>
+                  <td>{{x.studentid.roll}}</td>
+                  <td>{{x.leavedate}}</td>
+                  <td>{{x.leave_message}}</td>
+                  
+                
+                 
+				<td><a href="{% url 'deletestudent' %}?id={{x.id}}">delete</a></td>
+                {% if x.status == "pending" %}
+					
+                <td><a href="{% url 'approveleave' %}?id={{x.id}}">approve</a>&nbsp;<a href="{% url 'rejectleave' %}?id={{x.id}}">reject</a></td>
+                {% else %}
+                {% endif %}
+            </tr>
+
+             {% endfor %}
+                
+              
+              
+            </tbody>
+        </table>
+    </div>
+    </div>
+
+
+{% endblock %}

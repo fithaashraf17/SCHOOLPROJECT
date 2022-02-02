@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="innerpage_banner py-5">
+	<div class="dot1">
+		
+	</div>
+</section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+            <!-- general form elements -->
+           
+                <h3>Add Subject</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              {% for x in usr %}
+               <form  action="{% url 'updatesubject'    %}?id={{x.id}}" method="post"> 
+                {% csrf_token %}
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label>Subject Name </label>
+                      <input type="text" class="form-control" name="subject_name" value="{{x.subjectname}}">
+                    </div>
+                     <div class="form-group">
+                      <label>Course </label>
+                      <select class="form-control" name="course">
+                        <option value="{{x.courseid.id}}" selected>{{x.courseid.coursename}}</option>
+                          {% for course in courses %}
+                            <option value="{{ course.id }}">{{ course.coursename }}</option>
+                          {% endfor %}
+                      </select>
+                    </div>
+                    <div class="form-group">
+                      <label>Staff</label>
+                      <select class="form-control" name="staff">
+                        <option value="{{x.id}}" selected>{{x.name}}</option>
+                          {% for staff in staffs %}
+                            <option value="{{ staff.id }}">{{ staff.name }} </option>
+                          {% endfor %}
+                      </select>
+                    </div>
+                    <div class="card-footer">
+                  <button type="update" class="btn btn-primary btn-block">Add Subject</button>
+                </div>
+                </form>
+            <!-- /.card -->
+
+            {% endfor %}
+
+          </div>
+          </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+<!-- <div class="panel panel-widget"> -->
+    <div class="bs-docs-example">
+        <div style="overflow-x:auto;">
+  
+        <table class="table "  >
+     
+            <thead>
+                <tr>
+                  <th>#</th>
+                  <th> Name</th>
+               
+                 
+                  <th> subject</th>
+                  
+                  <th> section</th>
+                  
+                  <th>PAY</th>
+                </tr>
+            </thead>
+            
+            <tbody>
+                <tr>
+                    {% for x in t %}
+                  <td>{{forloop.counter}}</td>
+                  <td>{{x.name}}</td>
+                 
+                  <td>{{x.subject}}</td>
+                
+                 
+                  <td>{{x.section}}</td>
+                 
+                
+                
+				<td><a href= "{% url 'paysalary' %}?id={{x.id}}">PAY NOW</a></td>
+				
+					
+            
+                
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}

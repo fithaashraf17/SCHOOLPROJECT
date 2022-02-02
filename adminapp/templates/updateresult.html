@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="innerpage_banner py-5">
+	<div class="dot1">
+		
+	</div>
+</section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+            <!-- general form elements -->
+           <h3>{{msg}}</h3>
+                <h3>Exam Result</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              {% for x in q %}
+               <form  action="{% url 'updateresult'  %}?id={{x.id}}"  method="post"> 
+                {% csrf_token %}
+                <div class="card-body">
+                  <div class="form-group">
+                      <label>NAME </label>
+                     
+                      <input type="text" name="name" required="" value="{{x.studentid.name}}" >
+                    </div>
+                 
+                  
+                    <div class="form-group">
+                      <label>Class </label>
+                                        
+                      <input type="text" value="{{x.studentid.standard}}" name="standard" required="" >
+                  
+                  </div>
+                  <div class="form-group">
+                    <label>EXAM TYPE </label>
+                                      
+                    <input type="text"  value="{{x.examtype}}"  name="type" required="" >
+                
+                </div>
+                <div class="form-group">
+                  <label>REGISTER NO </label>
+                                    
+                  <input type="text" value="{{x.studentid.regno}}" name="standard" required="" readonly>
+              
+              </div>
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label>SEMESTER</label>
+                      <input type="text" class="form-control" value="{{x.sem}}" name="sem" placeholder="Enter semester">
+                    </div>
+                     <div class="form-group">
+                      <label>SUBJECT 1 </label>
+                      <input type="text" class="form-control" value="{{x.subject1}}" name="subject1" placeholder="enter mark ">
+                    </div>
+                    <div class="form-group">
+                      <label>SUBJECT 2</label>
+                      <input type="text" class="form-control" value="{{x.subject2}}" name="subject2" placeholder="enter mark ">
+                    </div>
+                    <div class="form-group">
+                      <label>SUBJECT 3</label>
+                      <input type="text" class="form-control" value="{{x.subject3}}" name="subject3" placeholder="enter mark ">
+                    </div>
+                    <div class="form-group">
+                      <label>SUBJECT 4</label>
+                      <input type="text" class="form-control" value="{{x.subject4}}" name="subject4" placeholder=" enter mark">
+                    </div>
+                    <div class="form-group">
+                      <label>SUBJECT 5</label>
+                      <input type="text" class="form-control"  value="{{x.subject5}}"name="subject5" placeholder=" enter mark">
+                    </div>
+                    <div class="form-group">
+                      <label> Assignment Grade</label>
+                      <input type="text" name="g" value="{{x.subject_assignment_marks}}">
+                    </div>
+                  </div>
+
+                     <div class="form-group">
+                        <label> TOTAL SCORE</label>
+                        <input type="text" name="ts" value="{{x.totalmark}}">
+                      </div> 
+                      <div class="form-group">
+                        <label> STUDENT SCORE</label>
+                        <input type="text" name="ss"  value="{{x.studentmark}}">
+                      </div>
+                      </div> 
+                      
+                      <div class="form-group">
+                        <label> STUDENT GRADE</label>
+                        <input type="text" name="grade"  value="{{x.grade}}">
+                      </div>
+                      </div> 
+                      <div class="form-group">
+                        <label> REMARK</label>
+                        <input type="text" name="status"  value="{{x.status}}">
+                      </div>
+                      </div> 
+                      
+                    <div class="card-footer">
+                  <button type="submit" class="btn btn-primary btn-block">UPDATE</button>
+                </div>
+                {% endfor %}
+                </form>
+            <!-- /.card -->
+
+
+
+          </div>
+          </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock %}

@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="innerpage_banner py-5">
+	<div class="dot1">
+		
+	</div>
+</section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-md-12">
+            <!-- general form elements -->
+           
+                <h3>Add Time Table</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form  action="{% url 'addtimetable' %}" method="post">
+                  {% csrf_token %}
+                <div class="card-body">
+                  <div class="form-group">
+                    <label>CLASS  </label>
+                    <input type="text" class="form-control" name="class" placeholder="Enter class">
+                  </div>
+                   
+
+                </div>
+                <div class="card-body">
+                    <div class="form-group">
+                      <label>DIVISION  </label>
+                      <input type="text" class="form-control" name="division" placeholder="Enter division">
+                    </div>
+                     
+  
+                  </div>
+                  <div class="card-body">
+                    <div class="form-group">
+                      <label>DAY  </label>
+                      <input type="text" class="form-control" name="day" placeholder="Enter day">
+                    </div>
+                    
+                  <div class="form-group">
+                    <label>Period 1</label>
+                    <select class="form-control" name="p1">
+                        {% for staff in staffs %}
+                          <option value="{{ staff.subjectname }}">{{ staff.subjectname }} </option>
+                        {% endfor %}
+                    </select>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label>Period 2</label>
+                    <select class="form-control" name="p2">
+                        {% for staff in staffs %}
+                          <option value="{{ staff.subjectname }}">{{ staff.subjectname }} </option>
+                        {% endfor %}
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Period 3</label>
+                    <select class="form-control" name="p3">
+                        {% for staff in staffs %}
+                          <option value="{{ staff.subjectname }}">{{ staff.subjectname }} </option>
+                        {% endfor %}
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Period 4</label>
+                    <select class="form-control" name="p4">
+                        {% for staff in staffs %}
+                          <option value="{{ staff.subjectname }}">{{ staff.subjectname }} </option>
+                        {% endfor %}
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label>Period 5</label>
+                    <select class="form-control" name="p5">
+                        {% for staff in staffs %}
+                          <option value="{{ staff.subjectname }}">{{ staff.subjectname }} </option>
+                        {% endfor %}
+                    </select>
+                  </div>
+                  
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary btn-block">Add Time table</button>
+                </div>
+              </form>
+            </div>
+            <!-- /.card -->
+
+
+
+          </div>
+          </div>
+      </div>
+    </section>
+    <!-- /.content -->
+{% endblock %}
